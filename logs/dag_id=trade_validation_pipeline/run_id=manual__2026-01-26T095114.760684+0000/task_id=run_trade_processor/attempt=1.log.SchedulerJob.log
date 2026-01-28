@@ -1,1 +1,0 @@
-[2026-01-26T09:51:15.481+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T09:51:14.760684+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
