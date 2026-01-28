@@ -6044,3 +6044,10 @@
 [2026-01-28T19:39:52.348+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:52.348+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-01-28T19:39:52.373+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:52.372+0000] {dag.py:3823} INFO - Setting next_dagrun for trade_simulation to 2026-01-28 00:00:00+00:00, run_after=2026-01-29 00:00:00+00:00
 [2026-01-28T19:39:52.396+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/trade_generator_dag.py took 0.236 seconds
+[2026-01-28T19:42:26.667+0000] {processor.py:161} INFO - Started process (PID=1940) to work on /opt/airflow/dags/trade_generator_dag.py
+[2026-01-28T19:42:26.668+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/trade_generator_dag.py for tasks to queue
+[2026-01-28T19:42:26.670+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:42:26.670+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/trade_generator_dag.py
+[2026-01-28T19:42:26.955+0000] {processor.py:840} INFO - DAG(s) 'trade_simulation' retrieved from /opt/airflow/dags/trade_generator_dag.py
+[2026-01-28T19:42:26.993+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:42:26.992+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-01-28T19:42:27.047+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:42:27.047+0000] {dag.py:3823} INFO - Setting next_dagrun for trade_simulation to 2026-01-28 00:00:00+00:00, run_after=2026-01-29 00:00:00+00:00
+[2026-01-28T19:42:27.094+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/trade_generator_dag.py took 0.432 seconds
