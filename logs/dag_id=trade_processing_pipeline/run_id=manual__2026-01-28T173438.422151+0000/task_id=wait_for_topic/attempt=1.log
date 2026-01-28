@@ -1,0 +1,20 @@
+[2026-01-28T17:34:45.613+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_processing_pipeline.wait_for_topic manual__2026-01-28T17:34:38.422151+00:00 [queued]>
+[2026-01-28T17:34:45.644+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_processing_pipeline.wait_for_topic manual__2026-01-28T17:34:38.422151+00:00 [queued]>
+[2026-01-28T17:34:45.646+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T17:34:45.684+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): wait_for_topic> on 2026-01-28 17:34:38.422151+00:00
+[2026-01-28T17:34:45.710+0000] {standard_task_runner.py:60} INFO - Started process 53 to run task
+[2026-01-28T17:34:45.728+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_processing_pipeline', 'wait_for_topic', 'manual__2026-01-28T17:34:38.422151+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpd93biawd']
+[2026-01-28T17:34:45.734+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask wait_for_topic
+[2026-01-28T17:34:46.159+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_processing_pipeline.wait_for_topic manual__2026-01-28T17:34:38.422151+00:00 [running]> on host e258d08a7e82
+[2026-01-28T17:34:46.554+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_processing_pipeline' AIRFLOW_CTX_TASK_ID='wait_for_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T17:34:38.422151+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T17:34:38.422151+00:00'
+[2026-01-28T17:34:46.573+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T17:34:47.306+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.6', 9092)]>: Broker version identified as 2.6
+[2026-01-28T17:34:47.308+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T17:34:47.835+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T17:34:47.837+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T17:34:47.839+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T17:35:41.343+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2026-01-28T17:35:41.361+0000] {process_utils.py:131} INFO - Sending 15 to group 53. PIDs of all processes in the group: [53]
+[2026-01-28T17:35:41.363+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 53
+[2026-01-28T17:35:41.364+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-01-28T17:35:43.568+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=53, status='terminated', exitcode=0, started='17:34:45') (53) terminated with exit code 0

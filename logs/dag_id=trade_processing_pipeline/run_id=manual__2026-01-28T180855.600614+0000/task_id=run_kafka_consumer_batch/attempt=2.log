@@ -1,0 +1,50 @@
+[2026-01-28T18:20:27.537+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T18:08:55.600614+00:00 [queued]>
+[2026-01-28T18:20:27.559+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T18:08:55.600614+00:00 [queued]>
+[2026-01-28T18:20:27.560+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 5
+[2026-01-28T18:20:27.583+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_kafka_consumer_batch> on 2026-01-28 18:08:55.600614+00:00
+[2026-01-28T18:20:27.595+0000] {standard_task_runner.py:60} INFO - Started process 179 to run task
+[2026-01-28T18:20:27.603+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_processing_pipeline', 'run_kafka_consumer_batch', 'manual__2026-01-28T18:08:55.600614+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmp3chvd8jc']
+[2026-01-28T18:20:27.610+0000] {standard_task_runner.py:88} INFO - Job 29: Subtask run_kafka_consumer_batch
+[2026-01-28T18:20:27.952+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T18:08:55.600614+00:00 [running]> on host e258d08a7e82
+[2026-01-28T18:20:28.834+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_processing_pipeline' AIRFLOW_CTX_TASK_ID='run_kafka_consumer_batch' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T18:08:55.600614+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T18:08:55.600614+00:00'
+[2026-01-28T18:20:28.860+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T18:20:29.284+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.6', 9092)]>: Broker version identified as 2.6
+[2026-01-28T18:20:29.295+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T18:20:29.328+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('trade-events',)
+[2026-01-28T18:20:29.395+0000] {kafka_consumer_batch.py:49} INFO - Kafka consumer started for topic: trade-events
+[2026-01-28T18:20:29.501+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T18:20:29.512+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T18:20:29.536+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T18:20:29.731+0000] {cluster.py:403} INFO - Coordinator for group/trade-file-consumer is ('coordinator-1', 'kafka', 9092, None)
+[2026-01-28T18:20:29.736+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group trade-file-consumer
+[2026-01-28T18:20:29.742+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-01-28T18:20:29.748+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group trade-file-consumer
+[2026-01-28T18:20:29.758+0000] {base.py:433} INFO - Failed to join group trade-file-consumer: NodeNotReadyError: coordinator-1
+[2026-01-28T18:20:29.763+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T18:20:29.768+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T18:20:29.880+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T18:20:29.973+0000] {base.py:661} INFO - Received member id kafka-python-2.3.0-2cde7e31-43cd-47d6-b914-112ef5712eea for group trade-file-consumer; will retry join-group
+[2026-01-28T18:20:29.978+0000] {base.py:433} INFO - Failed to join group trade-file-consumer: [Error 79] MemberIdRequiredError
+[2026-01-28T18:20:29.984+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T18:20:33.013+0000] {base.py:617} INFO - Successfully joined group trade-file-consumer <Generation 13 (member_id: kafka-python-2.3.0-2cde7e31-43cd-47d6-b914-112ef5712eea, protocol: range)>
+[2026-01-28T18:20:33.026+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T18:20:33.281+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('trade-events', 0)]
+[2026-01-28T18:20:33.285+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T18:20:37.324+0000] {base.py:1130} INFO - Stopping heartbeat thread
+[2026-01-28T18:20:37.326+0000] {base.py:943} INFO - Leaving consumer group trade-file-consumer (member kafka-python-2.3.0-2cde7e31-43cd-47d6-b914-112ef5712eea).
+[2026-01-28T18:20:37.342+0000] {base.py:961} INFO - LeaveGroup request for group trade-file-consumer returned successfully
+[2026-01-28T18:20:37.343+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T18:20:37.345+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T18:20:37.346+0000] {kafka_consumer_batch.py:83} INFO - Wrote 10 messages to /opt/***/raw/data/batch_20260128T182037Z_60d9e6.json
+[2026-01-28T18:20:37.347+0000] {python.py:201} INFO - Done. Returned value was: ('/opt/***/raw/data/batch_20260128T182037Z_60d9e6.json', '20260128T182037Z_60d9e6')
+[2026-01-28T18:20:37.386+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_processing_pipeline, task_id=run_kafka_consumer_batch, execution_date=20260128T180855, start_date=20260128T182027, end_date=20260128T182037
+[2026-01-28T18:20:37.387+0000] {logging_mixin.py:188} INFO - Attempting to send SUCCESS email for task: run_kafka_consumer_batch
+[2026-01-28T18:20:37.388+0000] {logging_mixin.py:188} INFO - Attempting to send email to: puneet.jaiswal@gmail.com
+[2026-01-28T18:20:38.534+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2026-01-28T18:20:38.536+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2026-01-28T18:20:38.537+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2026-01-28T18:20:38.543+0000] {logging_mixin.py:188} INFO - Failed to send email to puneet.jaiswal@gmail.com: [Errno 111] Connection refused
+[2026-01-28T18:20:38.661+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-28T18:20:38.723+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

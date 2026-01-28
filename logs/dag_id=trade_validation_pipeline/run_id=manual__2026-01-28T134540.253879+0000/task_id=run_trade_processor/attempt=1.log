@@ -1,0 +1,57 @@
+[2026-01-28T13:45:45.453+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-28T13:45:40.253879+00:00 [queued]>
+[2026-01-28T13:45:45.468+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-28T13:45:40.253879+00:00 [queued]>
+[2026-01-28T13:45:45.469+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T13:45:45.492+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_trade_processor> on 2026-01-28 13:45:40.253879+00:00
+[2026-01-28T13:45:45.503+0000] {standard_task_runner.py:60} INFO - Started process 78 to run task
+[2026-01-28T13:45:45.508+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'run_trade_processor', 'manual__2026-01-28T13:45:40.253879+00:00', '--job-id', '187', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpcthtb0xi']
+[2026-01-28T13:45:45.515+0000] {standard_task_runner.py:88} INFO - Job 187: Subtask run_trade_processor
+[2026-01-28T13:45:45.618+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-28T13:45:40.253879+00:00 [running]> on host 6201f2a4b369
+[2026-01-28T13:45:45.726+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='run_trade_processor' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T13:45:40.253879+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T13:45:40.253879+00:00'
+[2026-01-28T13:45:45.733+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T13:45:45.740+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.5', 9092)]>: Broker version identified as 2.6
+[2026-01-28T13:45:45.741+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T13:45:45.745+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('trade-events',)
+[2026-01-28T13:45:45.746+0000] {logging_mixin.py:188} INFO - Kafka Consumer started. Waiting for messages...
+[2026-01-28T13:45:45.751+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T13:45:45.752+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T13:45:45.753+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-28T13:45:45.861+0000] {cluster.py:403} INFO - Coordinator for group/trade-debug-consumer-2 is ('coordinator-1', 'kafka', 9092, None)
+[2026-01-28T13:45:45.865+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group trade-debug-consumer-2
+[2026-01-28T13:45:45.867+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-01-28T13:45:45.870+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group trade-debug-consumer-2
+[2026-01-28T13:45:45.887+0000] {base.py:433} INFO - Failed to join group trade-debug-consumer-2: NodeNotReadyError: coordinator-1
+[2026-01-28T13:45:45.891+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T13:45:45.895+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T13:45:46.000+0000] {base.py:546} INFO - (Re-)joining group trade-debug-consumer-2
+[2026-01-28T13:45:46.007+0000] {base.py:661} INFO - Received member id kafka-python-2.3.0-5b448bee-fab1-4f3f-838a-60af9fcf7116 for group trade-debug-consumer-2; will retry join-group
+[2026-01-28T13:45:46.008+0000] {base.py:433} INFO - Failed to join group trade-debug-consumer-2: [Error 79] MemberIdRequiredError
+[2026-01-28T13:45:46.009+0000] {base.py:546} INFO - (Re-)joining group trade-debug-consumer-2
+[2026-01-28T13:45:49.022+0000] {base.py:617} INFO - Successfully joined group trade-debug-consumer-2 <Generation 3 (member_id: kafka-python-2.3.0-5b448bee-fab1-4f3f-838a-60af9fcf7116, protocol: range)>
+[2026-01-28T13:45:49.024+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T13:45:49.043+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('trade-events', 0)]
+[2026-01-28T13:45:49.046+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('trade-events', 0),) for group trade-debug-consumer-2
+[2026-01-28T13:46:37.277+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T20300', 'instrument': 'FX', 'version': 2, 'trade_date': '2026-01-28', 'maturity_date': '2026-02-06', 'price': 101.59, 'quantity': 4164, 'counterparty': 'GS'}
+[2026-01-28T13:46:38.917+0000] {logging_mixin.py:188} INFO - Accepted: T20300 v2
+[2026-01-28T13:46:38.928+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T30352', 'instrument': 'EQUITY', 'version': 2, 'trade_date': '2026-01-28', 'maturity_date': '2026-02-01', 'price': 99.46, 'quantity': 323, 'counterparty': 'GS'}
+[2026-01-28T13:46:38.941+0000] {logging_mixin.py:188} INFO - Accepted: T30352 v2
+[2026-01-28T13:46:38.946+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T43587', 'instrument': 'BOND', 'version': 3, 'trade_date': '2026-01-28', 'maturity_date': '2026-01-23', 'price': 95.41, 'quantity': 4021, 'counterparty': 'JPMC'}
+[2026-01-28T13:46:38.970+0000] {logging_mixin.py:188} INFO - Rejected (Maturity date earlier than today): T43587
+[2026-01-28T13:46:38.974+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T11281', 'instrument': 'FX', 'version': 3, 'trade_date': '2026-01-28', 'maturity_date': '2026-01-25', 'price': 103.89, 'quantity': 4039, 'counterparty': 'CITI'}
+[2026-01-28T13:46:38.985+0000] {logging_mixin.py:188} INFO - Rejected (Maturity date earlier than today): T11281
+[2026-01-28T13:46:38.990+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T27744', 'instrument': 'BOND', 'version': 2, 'trade_date': '2026-01-28', 'maturity_date': '2026-02-17', 'price': 102.36, 'quantity': 373, 'counterparty': 'CITI'}
+[2026-01-28T13:46:39.001+0000] {logging_mixin.py:188} INFO - Accepted: T27744 v2
+[2026-01-28T13:46:39.008+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T97013', 'instrument': 'FX', 'version': 2, 'trade_date': '2026-01-28', 'maturity_date': '2026-01-23', 'price': 96.09, 'quantity': 4890, 'counterparty': 'JPMC'}
+[2026-01-28T13:46:39.017+0000] {logging_mixin.py:188} INFO - Rejected (Maturity date earlier than today): T97013
+[2026-01-28T13:46:39.023+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T69826', 'instrument': 'BOND', 'version': 1, 'trade_date': '2026-01-28', 'maturity_date': '2026-01-25', 'price': 100.86, 'quantity': 499, 'counterparty': 'GS'}
+[2026-01-28T13:46:39.033+0000] {logging_mixin.py:188} INFO - Rejected (Maturity date earlier than today): T69826
+[2026-01-28T13:46:39.038+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T43428', 'instrument': 'FX', 'version': 1, 'trade_date': '2026-01-28', 'maturity_date': '2026-02-15', 'price': 99.22, 'quantity': 3526, 'counterparty': 'GS'}
+[2026-01-28T13:46:39.048+0000] {logging_mixin.py:188} INFO - Accepted: T43428 v1
+[2026-01-28T13:46:39.053+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T83822', 'instrument': 'FX', 'version': 2, 'trade_date': '2026-01-28', 'maturity_date': '2026-02-17', 'price': 101.63, 'quantity': 4106, 'counterparty': 'CITI'}
+[2026-01-28T13:46:39.069+0000] {logging_mixin.py:188} INFO - Accepted: T83822 v2
+[2026-01-28T13:46:39.074+0000] {logging_mixin.py:188} INFO - Received message: {'trade_id': 'T54216', 'instrument': 'EQUITY', 'version': 3, 'trade_date': '2026-01-28', 'maturity_date': '2026-01-26', 'price': 103.63, 'quantity': 722, 'counterparty': 'GS'}
+[2026-01-28T13:46:39.083+0000] {logging_mixin.py:188} INFO - Rejected (Maturity date earlier than today): T54216
+[2026-01-28T13:50:08.358+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to removed. Terminating instance.
+[2026-01-28T13:50:08.398+0000] {process_utils.py:131} INFO - Sending 15 to group 78. PIDs of all processes in the group: [78]
+[2026-01-28T13:50:08.404+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 78
+[2026-01-28T13:50:08.412+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-01-28T13:50:09.024+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=78, status='terminated', exitcode=0, started='13:45:44') (78) terminated with exit code 0

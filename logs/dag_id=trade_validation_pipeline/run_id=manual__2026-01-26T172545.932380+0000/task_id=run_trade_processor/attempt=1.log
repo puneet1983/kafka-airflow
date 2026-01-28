@@ -1,0 +1,24 @@
+[2026-01-26T17:25:48.198+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:25:45.932380+00:00 [queued]>
+[2026-01-26T17:25:48.230+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:25:45.932380+00:00 [queued]>
+[2026-01-26T17:25:48.237+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-01-26T17:25:48.310+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): run_trade_processor> on 2026-01-26 17:25:45.932380+00:00
+[2026-01-26T17:25:48.322+0000] {standard_task_runner.py:60} INFO - Started process 29825 to run task
+[2026-01-26T17:25:48.327+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'run_trade_processor', 'manual__2026-01-26T17:25:45.932380+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpf9ha8nx9']
+[2026-01-26T17:25:48.330+0000] {standard_task_runner.py:88} INFO - Job 87: Subtask run_trade_processor
+[2026-01-26T17:25:48.455+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:25:45.932380+00:00 [running]> on host b50198b77dd0
+[2026-01-26T17:25:48.596+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='run_trade_processor' AIRFLOW_CTX_EXECUTION_DATE='2026-01-26T17:25:45.932380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-26T17:25:45.932380+00:00'
+[2026-01-26T17:25:48.598+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-26T17:25:48.601+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/kafka_consumer.py']
+[2026-01-26T17:25:48.616+0000] {subprocess.py:86} INFO - Output:
+[2026-01-26T17:25:55.114+0000] {subprocess.py:93} INFO - Waiting for messages...
+[2026-01-26T17:25:55.121+0000] {subprocess.py:93} INFO - consumer is True:
+[2026-01-26T17:25:55.122+0000] {subprocess.py:93} INFO - 🚀 Starting batch consume...
+[2026-01-26T17:25:55.123+0000] {subprocess.py:93} INFO - 0 : {}
+[2026-01-26T17:25:55.124+0000] {subprocess.py:93} INFO - 1 : {}
+[2026-01-26T17:25:55.125+0000] {subprocess.py:93} INFO - 2 : {}
+[2026-01-26T17:25:55.125+0000] {subprocess.py:93} INFO - ⏹ No more messages. Exiting batch.
+[2026-01-26T17:25:55.127+0000] {subprocess.py:93} INFO - 🏁 Batch completed.
+[2026-01-26T17:25:55.183+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-26T17:25:55.219+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_validation_pipeline, task_id=run_trade_processor, execution_date=20260126T172545, start_date=20260126T172548, end_date=20260126T172555
+[2026-01-26T17:25:55.264+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-26T17:25:55.281+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

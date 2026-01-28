@@ -1,0 +1,57 @@
+[2026-01-28T09:44:30.718+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T09:44:30.816+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T09:44:30.825+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T09:44:30.899+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): wait_for_topic> on 2026-01-27 00:00:00+00:00
+[2026-01-28T09:44:30.925+0000] {standard_task_runner.py:60} INFO - Started process 149 to run task
+[2026-01-28T09:44:31.297+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'wait_for_topic', 'scheduled__2026-01-27T00:00:00+00:00', '--job-id', '167', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpi3wnl8ob']
+[2026-01-28T09:44:31.401+0000] {standard_task_runner.py:88} INFO - Job 167: Subtask wait_for_topic
+[2026-01-28T09:44:32.614+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [running]> on host ff8b2caba3fd
+[2026-01-28T09:44:33.688+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='test@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='wait_for_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-27T00:00:00+00:00'
+[2026-01-28T09:44:33.934+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T09:44:34.274+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.5', 9092)]>: Broker version identified as 2.6
+[2026-01-28T09:44:34.281+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T09:44:34.360+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T09:44:34.391+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T09:44:34.404+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-28T09:44:34.510+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-28T09:44:34.583+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_validation_pipeline, task_id=wait_for_topic, execution_date=20260127T000000, start_date=20260128T094430, end_date=20260128T094434
+[2026-01-28T09:44:34.721+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-28T09:44:34.898+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T15:41:38.820+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T15:41:38.840+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T15:41:38.844+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T15:41:38.875+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): wait_for_topic> on 2026-01-27 00:00:00+00:00
+[2026-01-28T15:41:38.884+0000] {standard_task_runner.py:60} INFO - Started process 63 to run task
+[2026-01-28T15:41:38.891+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'wait_for_topic', 'scheduled__2026-01-27T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpvts1t01p']
+[2026-01-28T15:41:38.896+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask wait_for_topic
+[2026-01-28T15:41:39.273+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [running]> on host cf6cf776ac13
+[2026-01-28T15:41:39.481+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='wait_for_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-27T00:00:00+00:00'
+[2026-01-28T15:41:39.503+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T15:41:39.519+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.6', 9092)]>: Broker version identified as 2.6
+[2026-01-28T15:41:39.520+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T15:41:39.548+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T15:41:39.550+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T15:41:39.551+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T15:41:39.592+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-28T15:41:39.628+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_validation_pipeline, task_id=wait_for_topic, execution_date=20260127T000000, start_date=20260128T154138, end_date=20260128T154139
+[2026-01-28T15:41:39.692+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-28T15:41:39.731+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T15:58:30.139+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T15:58:30.155+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [queued]>
+[2026-01-28T15:58:30.156+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T15:58:30.184+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): wait_for_topic> on 2026-01-27 00:00:00+00:00
+[2026-01-28T15:58:30.194+0000] {standard_task_runner.py:60} INFO - Started process 58 to run task
+[2026-01-28T15:58:30.199+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'wait_for_topic', 'scheduled__2026-01-27T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpwx_wlwss']
+[2026-01-28T15:58:30.204+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask wait_for_topic
+[2026-01-28T15:58:30.362+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.wait_for_topic scheduled__2026-01-27T00:00:00+00:00 [running]> on host 0e87e2975bbb
+[2026-01-28T15:58:30.536+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='wait_for_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-27T00:00:00+00:00'
+[2026-01-28T15:58:30.552+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T15:58:30.564+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.6', 9092)]>: Broker version identified as 2.6
+[2026-01-28T15:58:30.566+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T15:58:30.587+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T15:58:30.590+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T15:58:30.594+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T15:58:30.652+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-28T15:58:30.669+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_validation_pipeline, task_id=wait_for_topic, execution_date=20260127T000000, start_date=20260128T155830, end_date=20260128T155830
+[2026-01-28T15:58:30.711+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-28T15:58:30.762+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

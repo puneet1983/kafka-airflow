@@ -1,0 +1,102 @@
+[
+  {
+    "trade_id": "T43837",
+    "instrument": "EQUITY",
+    "version": 1,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-19",
+    "price": 96.91,
+    "quantity": 2786,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T21725",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-01-27",
+    "price": 99.7,
+    "quantity": 150,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T46957",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-13",
+    "price": 97.28,
+    "quantity": 810,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T29183",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-25",
+    "price": 103.83,
+    "quantity": 2975,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T61448",
+    "instrument": "FX",
+    "version": 2,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-01-27",
+    "price": 97.47,
+    "quantity": 2276,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T88736",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-01-25",
+    "price": 101.01,
+    "quantity": 4040,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T80140",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-27",
+    "price": 96.45,
+    "quantity": 3378,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T99996",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-22",
+    "price": 98.22,
+    "quantity": 3225,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T56269",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-10",
+    "price": 99.42,
+    "quantity": 972,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T94814",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-28",
+    "maturity_date": "2026-02-24",
+    "price": 95.87,
+    "quantity": 2409,
+    "counterparty": "CITI"
+  }
+]

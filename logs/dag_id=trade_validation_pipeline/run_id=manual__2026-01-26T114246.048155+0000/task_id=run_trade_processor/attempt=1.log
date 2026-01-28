@@ -1,0 +1,28 @@
+[2026-01-26T11:42:47.267+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T11:42:46.048155+00:00 [queued]>
+[2026-01-26T11:42:47.285+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T11:42:46.048155+00:00 [queued]>
+[2026-01-26T11:42:47.285+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-01-26T11:42:47.307+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): run_trade_processor> on 2026-01-26 11:42:46.048155+00:00
+[2026-01-26T11:42:47.314+0000] {standard_task_runner.py:60} INFO - Started process 57 to run task
+[2026-01-26T11:42:47.323+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'run_trade_processor', 'manual__2026-01-26T11:42:46.048155+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpgtq_xabv']
+[2026-01-26T11:42:47.326+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask run_trade_processor
+[2026-01-26T11:42:47.439+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T11:42:46.048155+00:00 [running]> on host e38a56f5aa99
+[2026-01-26T11:42:47.586+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='run_trade_processor' AIRFLOW_CTX_EXECUTION_DATE='2026-01-26T11:42:46.048155+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-26T11:42:46.048155+00:00'
+[2026-01-26T11:42:47.589+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-26T11:42:47.592+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/kafka_consumer.py']
+[2026-01-26T11:42:47.607+0000] {subprocess.py:86} INFO - Output:
+[2026-01-26T11:42:47.709+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-01-26T11:42:47.711+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/kafka_consumer.py", line 2, in <module>
+[2026-01-26T11:42:47.712+0000] {subprocess.py:93} INFO -     import duckdb
+[2026-01-26T11:42:47.713+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'duckdb'
+[2026-01-26T11:42:47.715+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-01-26T11:42:47.731+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-26T11:42:47.736+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=trade_validation_pipeline, task_id=run_trade_processor, execution_date=20260126T114246, start_date=20260126T114247, end_date=20260126T114247
+[2026-01-26T11:42:47.759+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 30 for task run_trade_processor (Bash command failed. The command returned a non-zero exit code 1.; 57)
+[2026-01-26T11:42:47.814+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-01-26T11:42:47.837+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

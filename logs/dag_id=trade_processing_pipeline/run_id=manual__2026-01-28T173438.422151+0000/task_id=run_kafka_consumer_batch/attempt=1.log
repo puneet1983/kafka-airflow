@@ -1,0 +1,91 @@
+[2026-01-28T17:35:36.578+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T17:34:38.422151+00:00 [queued]>
+[2026-01-28T17:35:36.607+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T17:34:38.422151+00:00 [queued]>
+[2026-01-28T17:35:36.610+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T17:35:36.634+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_kafka_consumer_batch> on 2026-01-28 17:34:38.422151+00:00
+[2026-01-28T17:35:36.647+0000] {standard_task_runner.py:60} INFO - Started process 59 to run task
+[2026-01-28T17:35:36.663+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_processing_pipeline', 'run_kafka_consumer_batch', 'manual__2026-01-28T17:34:38.422151+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpo00kkjt_']
+[2026-01-28T17:35:36.668+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask run_kafka_consumer_batch
+[2026-01-28T17:35:37.205+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_processing_pipeline.run_kafka_consumer_batch manual__2026-01-28T17:34:38.422151+00:00 [running]> on host e258d08a7e82
+[2026-01-28T17:35:37.451+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet.jaiswal@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_processing_pipeline' AIRFLOW_CTX_TASK_ID='run_kafka_consumer_batch' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T17:34:38.422151+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T17:34:38.422151+00:00'
+[2026-01-28T17:35:37.482+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T17:35:37.501+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.6', 9092)]>: Broker version identified as 2.6
+[2026-01-28T17:35:37.502+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T17:35:37.507+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('trade-events',)
+[2026-01-28T17:35:37.509+0000] {kafka_consumer_batch.py:49} INFO - Kafka consumer started for topic: trade-events
+[2026-01-28T17:35:37.770+0000] {cluster.py:315} WARNING - Topic trade-events is not available during auto-create initialization
+[2026-01-28T17:35:37.778+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T17:35:37.780+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T17:35:37.781+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2026-01-28T17:35:41.843+0000] {cluster.py:403} INFO - Coordinator for group/trade-file-consumer is ('coordinator-1', 'kafka', 9092, None)
+[2026-01-28T17:35:41.854+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group trade-file-consumer
+[2026-01-28T17:35:41.856+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-01-28T17:35:41.858+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group trade-file-consumer
+[2026-01-28T17:35:41.859+0000] {base.py:433} INFO - Failed to join group trade-file-consumer: NodeNotReadyError: coordinator-1
+[2026-01-28T17:35:41.862+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2026-01-28T17:35:41.864+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2026-01-28T17:35:41.969+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T17:35:42.021+0000] {base.py:661} INFO - Received member id kafka-python-2.3.0-256af450-f857-4c5b-ab0c-ca24b84f5100 for group trade-file-consumer; will retry join-group
+[2026-01-28T17:35:42.022+0000] {base.py:433} INFO - Failed to join group trade-file-consumer: [Error 79] MemberIdRequiredError
+[2026-01-28T17:35:42.023+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T17:35:45.371+0000] {base.py:617} INFO - Successfully joined group trade-file-consumer <Generation 1 (member_id: kafka-python-2.3.0-256af450-f857-4c5b-ab0c-ca24b84f5100, protocol: range)>
+[2026-01-28T17:35:45.372+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T17:35:45.374+0000] {range.py:53} WARNING - No partition metadata for topic trade-events
+[2026-01-28T17:35:45.747+0000] {subscription_state.py:254} INFO - Updated partition assignment: []
+[2026-01-28T17:35:45.750+0000] {consumer.py:260} INFO - Setting newly assigned partitions () for group trade-file-consumer
+[2026-01-28T17:35:48.749+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group trade-file-consumer
+[2026-01-28T17:35:48.757+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T17:35:48.769+0000] {base.py:617} INFO - Successfully joined group trade-file-consumer <Generation 2 (member_id: kafka-python-2.3.0-256af450-f857-4c5b-ab0c-ca24b84f5100, protocol: range)>
+[2026-01-28T17:35:48.770+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T17:35:48.786+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('trade-events', 0)]
+[2026-01-28T17:35:48.788+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T17:35:48.861+0000] {fetcher.py:418} INFO - Resetting offset for partition ('trade-events', 0) to offset 0.
+[2026-01-28T17:35:51.799+0000] {base.py:1025} WARNING - Heartbeat failed for group trade-file-consumer because it is rebalancing
+[2026-01-28T17:35:51.802+0000] {consumer.py:379} INFO - Revoking previously assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T17:35:51.803+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T17:35:51.810+0000] {base.py:617} INFO - Successfully joined group trade-file-consumer <Generation 3 (member_id: kafka-python-2.3.0-256af450-f857-4c5b-ab0c-ca24b84f5100, protocol: range)>
+[2026-01-28T17:35:51.811+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T17:35:51.822+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('trade-events', 0)]
+[2026-01-28T17:35:51.823+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T17:35:52.144+0000] {fetcher.py:418} INFO - Resetting offset for partition ('trade-events', 0) to offset 0.
+[2026-01-28T17:36:21.920+0000] {base.py:1025} WARNING - Heartbeat failed for group trade-file-consumer because it is rebalancing
+[2026-01-28T17:36:21.921+0000] {consumer.py:379} INFO - Revoking previously assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T17:36:21.921+0000] {base.py:546} INFO - (Re-)joining group trade-file-consumer
+[2026-01-28T17:36:21.925+0000] {base.py:617} INFO - Successfully joined group trade-file-consumer <Generation 4 (member_id: kafka-python-2.3.0-256af450-f857-4c5b-ab0c-ca24b84f5100, protocol: range)>
+[2026-01-28T17:36:21.926+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-01-28T17:36:21.932+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('trade-events', 0)]
+[2026-01-28T17:36:21.935+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('trade-events', 0),) for group trade-file-consumer
+[2026-01-28T17:36:22.020+0000] {fetcher.py:418} INFO - Resetting offset for partition ('trade-events', 0) to offset 0.
+[2026-01-28T17:36:32.263+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2026-01-28T17:36:32.268+0000] {process_utils.py:131} INFO - Sending 15 to group 59. PIDs of all processes in the group: [59]
+[2026-01-28T17:36:32.269+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 59
+[2026-01-28T17:36:32.271+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-01-28T17:36:32.284+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/scripts/kafka_consumer_batch.py", line 54, in consume_kafka_to_file
+    for msg in consumer:
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/consumer/group.py", line 1213, in __next__
+    return next(self._iterator)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/consumer/group.py", line 1185, in _message_generator_v2
+    record_map = self.poll(timeout_ms=timeout_ms, update_offsets=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/consumer/group.py", line 708, in poll
+    records = self._poll_once(timer, max_records, update_offsets=update_offsets)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/consumer/group.py", line 757, in _poll_once
+    self._client.poll(timeout_ms=poll_timeout_ms)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/client_async.py", line 685, in poll
+    self._poll(timeout / 1000)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/client_async.py", line 728, in _poll
+    ready = self._selector.select(timeout)
+  File "/usr/local/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2026-01-28T17:36:32.300+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=trade_processing_pipeline, task_id=run_kafka_consumer_batch, execution_date=20260128T173438, start_date=20260128T173536, end_date=20260128T173632
+[2026-01-28T17:36:33.326+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task run_kafka_consumer_batch (Task received SIGTERM signal; 59)
+[2026-01-28T17:36:33.387+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=59, status='terminated', exitcode=1, started='17:35:36') (59) terminated with exit code 1

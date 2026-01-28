@@ -1,0 +1,19 @@
+[2026-01-26T17:36:10.165+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:36:07.466633+00:00 [queued]>
+[2026-01-26T17:36:10.203+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:36:07.466633+00:00 [queued]>
+[2026-01-26T17:36:10.206+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-01-26T17:36:10.259+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): run_trade_processor> on 2026-01-26 17:36:07.466633+00:00
+[2026-01-26T17:36:10.271+0000] {standard_task_runner.py:60} INFO - Started process 29880 to run task
+[2026-01-26T17:36:10.288+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_validation_pipeline', 'run_trade_processor', 'manual__2026-01-26T17:36:07.466633+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/trade_etl_dag.py', '--cfg-path', '/tmp/tmpwnrxwf0w']
+[2026-01-26T17:36:10.293+0000] {standard_task_runner.py:88} INFO - Job 94: Subtask run_trade_processor
+[2026-01-26T17:36:10.539+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_validation_pipeline.run_trade_processor manual__2026-01-26T17:36:07.466633+00:00 [running]> on host b50198b77dd0
+[2026-01-26T17:36:10.781+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_validation_pipeline' AIRFLOW_CTX_TASK_ID='run_trade_processor' AIRFLOW_CTX_EXECUTION_DATE='2026-01-26T17:36:07.466633+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-26T17:36:07.466633+00:00'
+[2026-01-26T17:36:10.789+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-26T17:36:10.796+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/kafka_test_consumer.py']
+[2026-01-26T17:36:10.827+0000] {subprocess.py:86} INFO - Output:
+[2026-01-26T17:42:28.860+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2026-01-26T17:42:28.896+0000] {process_utils.py:131} INFO - Sending 15 to group 29880. PIDs of all processes in the group: [29881, 29880]
+[2026-01-26T17:42:28.900+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 29880
+[2026-01-26T17:42:28.910+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-01-26T17:42:28.938+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2026-01-26T17:42:29.237+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=29881, status='terminated', started='17:36:10') (29881) terminated with exit code None
+[2026-01-26T17:42:29.240+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=29880, status='terminated', exitcode=0, started='17:36:10') (29880) terminated with exit code 0

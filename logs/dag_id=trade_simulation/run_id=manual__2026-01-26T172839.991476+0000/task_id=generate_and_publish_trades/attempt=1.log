@@ -1,0 +1,31 @@
+[2026-01-26T17:28:43.994+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_simulation.generate_and_publish_trades manual__2026-01-26T17:28:39.991476+00:00 [queued]>
+[2026-01-26T17:28:44.007+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_simulation.generate_and_publish_trades manual__2026-01-26T17:28:39.991476+00:00 [queued]>
+[2026-01-26T17:28:44.007+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-26T17:28:44.022+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_and_publish_trades> on 2026-01-26 17:28:39.991476+00:00
+[2026-01-26T17:28:44.029+0000] {standard_task_runner.py:60} INFO - Started process 29857 to run task
+[2026-01-26T17:28:44.033+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_simulation', 'generate_and_publish_trades', 'manual__2026-01-26T17:28:39.991476+00:00', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/trade_generator_dag.py', '--cfg-path', '/tmp/tmp1qy16yac']
+[2026-01-26T17:28:44.035+0000] {standard_task_runner.py:88} INFO - Job 91: Subtask generate_and_publish_trades
+[2026-01-26T17:28:44.113+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_simulation.generate_and_publish_trades manual__2026-01-26T17:28:39.991476+00:00 [running]> on host b50198b77dd0
+[2026-01-26T17:28:44.211+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_simulation' AIRFLOW_CTX_TASK_ID='generate_and_publish_trades' AIRFLOW_CTX_EXECUTION_DATE='2026-01-26T17:28:39.991476+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-26T17:28:39.991476+00:00'
+[2026-01-26T17:28:44.217+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-26T17:28:44.223+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.5', 9092)]>: Broker version identified as 2.6
+[2026-01-26T17:28:44.225+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-26T17:28:44.336+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-26T17:28:44.337+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-26T17:28:44.339+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-26T17:28:44.350+0000] {logging_mixin.py:188} INFO - Published: T81327
+[2026-01-26T17:28:44.352+0000] {logging_mixin.py:188} INFO - Published: T52799
+[2026-01-26T17:28:44.354+0000] {logging_mixin.py:188} INFO - Published: T48393
+[2026-01-26T17:28:44.356+0000] {logging_mixin.py:188} INFO - Published: T18944
+[2026-01-26T17:28:44.359+0000] {logging_mixin.py:188} INFO - Published: T36942
+[2026-01-26T17:28:44.362+0000] {logging_mixin.py:188} INFO - Published: T98341
+[2026-01-26T17:28:44.364+0000] {logging_mixin.py:188} INFO - Published: T72020
+[2026-01-26T17:28:44.366+0000] {logging_mixin.py:188} INFO - Published: T14204
+[2026-01-26T17:28:44.367+0000] {logging_mixin.py:188} INFO - Published: T75649
+[2026-01-26T17:28:44.368+0000] {logging_mixin.py:188} INFO - Published: T19238
+[2026-01-26T17:28:44.394+0000] {kafka.py:633} INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 9223372036.0 secs timeout.
+[2026-01-26T17:28:44.396+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-26T17:28:44.397+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-26T17:28:44.414+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_simulation, task_id=generate_and_publish_trades, execution_date=20260126T172839, start_date=20260126T172843, end_date=20260126T172844
+[2026-01-26T17:28:44.493+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-26T17:28:44.532+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

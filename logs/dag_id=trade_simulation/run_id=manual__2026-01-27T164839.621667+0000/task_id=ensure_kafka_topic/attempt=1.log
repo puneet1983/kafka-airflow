@@ -1,0 +1,184 @@
+[2026-01-27T16:48:48.318+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-27T16:48:39.621667+00:00 [queued]>
+[2026-01-27T16:48:48.418+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-27T16:48:39.621667+00:00 [queued]>
+[2026-01-27T16:48:48.426+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-27T16:48:48.499+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ensure_kafka_topic> on 2026-01-27 16:48:39.621667+00:00
+[2026-01-27T16:48:48.525+0000] {standard_task_runner.py:60} INFO - Started process 122 to run task
+[2026-01-27T16:48:48.548+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_simulation', 'ensure_kafka_topic', 'manual__2026-01-27T16:48:39.621667+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/trade_generator_dag.py', '--cfg-path', '/tmp/tmpfsgzaka3']
+[2026-01-27T16:48:48.558+0000] {standard_task_runner.py:88} INFO - Job 133: Subtask ensure_kafka_topic
+[2026-01-27T16:49:13.277+0000] {cli_action_loggers.py:135} WARNING - Failed to log action (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-01-27T16:49:35.055+0000] {job.py:213} ERROR - Job heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 187, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/api_internal/internal_api_call.py", line 114, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 308, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-01-27T16:49:36.163+0000] {job.py:221} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-01-27T16:49:36.729+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-27T16:48:39.621667+00:00 [running]> on host 807ecb0a3a53
+[2026-01-27T16:49:38.149+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_simulation' AIRFLOW_CTX_TASK_ID='ensure_kafka_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-27T16:48:39.621667+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-27T16:48:39.621667+00:00'
+[2026-01-27T16:49:38.208+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:49:38.214+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:49:38.217+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:49:38.245+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.01 secs
+[2026-01-27T16:49:38.268+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:49:38.270+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:49:38.274+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:49:38.276+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.08 secs
+[2026-01-27T16:49:38.372+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:49:38.375+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:49:38.376+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:49:38.381+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.19 secs
+[2026-01-27T16:49:38.569+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:49:40.196+0000] {logging_mixin.py:188} INFO - Kafka broker not ready, retrying in 5 seconds...
+[2026-01-27T16:49:54.076+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-01-27T16:49:54.077+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (0)
+[2026-01-27T16:49:54.078+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-01-27T16:49:54.080+0000] {logging_mixin.py:188} INFO - Kafka broker not ready, retrying in 5 seconds...
+[2026-01-27T16:50:04.091+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:04.092+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:04.093+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:04.094+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.04 secs
+[2026-01-27T16:50:04.143+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:04.145+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:04.146+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:04.147+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.10 secs
+[2026-01-27T16:50:04.250+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:04.251+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:04.252+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:04.254+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.19 secs
+[2026-01-27T16:50:04.442+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:04.444+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:04.445+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:04.446+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.41 secs
+[2026-01-27T16:50:04.853+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:04.855+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:04.856+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:04.857+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.82 secs
+[2026-01-27T16:50:05.679+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:05.682+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:05.684+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:05.685+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.40 secs
+[2026-01-27T16:50:06.092+0000] {logging_mixin.py:188} INFO - Kafka broker not ready, retrying in 5 seconds...
+[2026-01-27T16:50:16.401+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:16.427+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:16.428+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:16.436+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:16.438+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:16.444+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:16.445+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.08 secs
+[2026-01-27T16:50:16.537+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:16.539+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-01-27T16:50:16.542+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-01-27T16:50:16.544+0000] {client_async.py:1051} WARNING - No node available during check_version; sleeping 0.22 secs
+[2026-01-27T16:50:16.772+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:17.378+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.5', 9092)]>: Broker version identified as 2.6
+[2026-01-27T16:50:17.382+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-27T16:50:17.476+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-27T16:50:17.481+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-27T16:50:17.483+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-27T16:50:17.638+0000] {logging_mixin.py:188} INFO - ℹ️ Topic already exists: trade-events
+[2026-01-27T16:50:17.644+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-27T16:50:17.648+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-27T16:50:17.919+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_simulation, task_id=ensure_kafka_topic, execution_date=20260127T164839, start_date=20260127T164848, end_date=20260127T165017
+[2026-01-27T16:50:18.572+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-27T16:50:19.572+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

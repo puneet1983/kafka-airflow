@@ -1,0 +1,21 @@
+[2026-01-28T13:17:56.834+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-28T13:17:48.530516+00:00 [queued]>
+[2026-01-28T13:17:56.858+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-28T13:17:48.530516+00:00 [queued]>
+[2026-01-28T13:17:56.858+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-01-28T13:17:56.885+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ensure_kafka_topic> on 2026-01-28 13:17:48.530516+00:00
+[2026-01-28T13:17:56.894+0000] {standard_task_runner.py:60} INFO - Started process 186 to run task
+[2026-01-28T13:17:56.900+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'trade_simulation', 'ensure_kafka_topic', 'manual__2026-01-28T13:17:48.530516+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/trade_generator_dag.py', '--cfg-path', '/tmp/tmpvm_ja8ku']
+[2026-01-28T13:17:56.903+0000] {standard_task_runner.py:88} INFO - Job 173: Subtask ensure_kafka_topic
+[2026-01-28T13:17:57.095+0000] {task_command.py:423} INFO - Running <TaskInstance: trade_simulation.ensure_kafka_topic manual__2026-01-28T13:17:48.530516+00:00 [running]> on host ff8b2caba3fd
+[2026-01-28T13:17:57.708+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='puneet@gmail.com' AIRFLOW_CTX_DAG_OWNER='puneet' AIRFLOW_CTX_DAG_ID='trade_simulation' AIRFLOW_CTX_TASK_ID='ensure_kafka_topic' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T13:17:48.530516+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T13:17:48.530516+00:00'
+[2026-01-28T13:17:57.751+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T13:17:58.320+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.5', 9092)]>: Broker version identified as 2.6
+[2026-01-28T13:17:58.328+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T13:17:58.500+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.5', 9092)]>: connecting to kafka:9092 [('172.19.0.5', 9092) IPv4]
+[2026-01-28T13:17:58.507+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Connection complete.
+[2026-01-28T13:17:58.512+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-28T13:17:58.596+0000] {logging_mixin.py:188} INFO - ℹ️ Topic already exists: trade-events
+[2026-01-28T13:17:58.597+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.5', 9092)]>: Closing connection. 
+[2026-01-28T13:17:58.599+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-01-28T13:17:58.628+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=trade_simulation, task_id=ensure_kafka_topic, execution_date=20260128T131748, start_date=20260128T131756, end_date=20260128T131758
+[2026-01-28T13:17:58.708+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-28T13:17:58.774+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
