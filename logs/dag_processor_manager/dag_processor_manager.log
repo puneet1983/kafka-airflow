@@ -24497,3 +24497,36 @@ File Path                                       PID    Runtime      # DAGs    # 
 /opt/airflow/dags/trade_etl_dag.py                                       1           0  0.43s           2026-01-28T19:38:05
 /opt/airflow/dags/trade_generator_dag.py                                 1           0  0.44s           2026-01-28T19:37:49
 ================================================================================
+[2026-01-28T19:38:39.794+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/----trade_etl_dag_bkp.txt.py                           0           1  0.11s           2026-01-28T19:38:10
+/opt/airflow/dags/test_dag.py                                            1           0  0.43s           2026-01-28T19:38:15
+/opt/airflow/dags/trade_etl_dag.py                                       1           0  0.43s           2026-01-28T19:38:36
+/opt/airflow/dags/trade_generator_dag.py                                 1           0  0.30s           2026-01-28T19:38:20
+================================================================================
+[2026-01-28T19:39:10.349+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/----trade_etl_dag_bkp.txt.py                           0           1  0.11s           2026-01-28T19:38:40
+/opt/airflow/dags/test_dag.py                                            1           0  0.15s           2026-01-28T19:38:46
+/opt/airflow/dags/trade_etl_dag.py                                       1           0  2.32s           2026-01-28T19:39:09
+/opt/airflow/dags/trade_generator_dag.py                                 1           0  0.32s           2026-01-28T19:38:51
+================================================================================
+[2026-01-28T19:39:40.361+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/----trade_etl_dag_bkp.txt.py                           0           1  1.54s           2026-01-28T19:39:13
+/opt/airflow/dags/test_dag.py                                            1           0  0.24s           2026-01-28T19:39:16
+/opt/airflow/dags/trade_etl_dag.py               1899  0.02s             1           0  2.32s           2026-01-28T19:39:09
+/opt/airflow/dags/trade_generator_dag.py                                 1           0  0.33s           2026-01-28T19:39:21
+================================================================================

@@ -8268,3 +8268,17 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 [2026-01-28T19:38:36.755+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:38:36.755+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-01-28T19:38:36.783+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:38:36.783+0000] {dag.py:3823} INFO - Setting next_dagrun for trade_processing_pipeline to 2026-01-28 00:00:00+00:00, run_after=2026-01-29 00:00:00+00:00
 [2026-01-28T19:38:36.839+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/trade_etl_dag.py took 0.379 seconds
+[2026-01-28T19:39:07.616+0000] {processor.py:161} INFO - Started process (PID=1892) to work on /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:07.624+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/trade_etl_dag.py for tasks to queue
+[2026-01-28T19:39:07.633+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:07.633+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:08.863+0000] {processor.py:840} INFO - DAG(s) 'trade_processing_pipeline' retrieved from /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:09.172+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:09.171+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-01-28T19:39:09.274+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:09.273+0000] {dag.py:3823} INFO - Setting next_dagrun for trade_processing_pipeline to 2026-01-28 00:00:00+00:00, run_after=2026-01-29 00:00:00+00:00
+[2026-01-28T19:39:09.378+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/trade_etl_dag.py took 1.772 seconds
+[2026-01-28T19:39:40.373+0000] {processor.py:161} INFO - Started process (PID=1899) to work on /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:40.376+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/trade_etl_dag.py for tasks to queue
+[2026-01-28T19:39:40.378+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:40.377+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:40.628+0000] {processor.py:840} INFO - DAG(s) 'trade_processing_pipeline' retrieved from /opt/airflow/dags/trade_etl_dag.py
+[2026-01-28T19:39:40.687+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:40.687+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-01-28T19:39:40.744+0000] {logging_mixin.py:188} INFO - [2026-01-28T19:39:40.744+0000] {dag.py:3823} INFO - Setting next_dagrun for trade_processing_pipeline to 2026-01-28 00:00:00+00:00, run_after=2026-01-29 00:00:00+00:00
+[2026-01-28T19:39:40.795+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/trade_etl_dag.py took 0.427 seconds
