@@ -19,7 +19,7 @@ This project simulates a real-world trade processing platform where thousands of
 Trade Producer(simulated data in json format) → Kafka (raw_trades) → Consumer & Validator → DuckDB → Airflow Orchestration → Alerts
 ```
 
-*(See `/docs/architecture.puml` for the full diagram.)*
+*(See `docs/Architecture-Design.webp` for the full diagram.)*
 
 ---
 
@@ -65,7 +65,7 @@ etl-trade-pipeline/
 
 ---
 
-## ⚙️ Prerequisites
+##  Prerequisites
 
 - Docker Desktop  
 - Docker Compose  
@@ -74,7 +74,7 @@ etl-trade-pipeline/
 
 ---
 
-## 🛠️ Setup & Installation
+##  Setup & Installation
 
 ### 1️⃣ Clone the Repository
 ```bash
@@ -96,7 +96,7 @@ docker compose up -d
 ```bash
 docker compose run airflow-webserver airflow db init
 
-docker compose run airflow-webserver airflow users create   --username admin   --password <pwd>   --firstname Puneet   --lastname Jaiswal   --role Admin   --email <email>
+docker compose run airflow-webserver airflow users create   --username admin   --password <pwd>   --firstname <fname>   --lastname <lastname>   --role Admin   --email <email>
 ```
 
 ---
@@ -109,21 +109,21 @@ docker compose exec airflow-webserver python scripts/init_db.py
 
 ---
 
-### 5️⃣ Start Trade Producer
+### 5️ Start Trade Producer
 
 - Open Airflow UI → http://localhost:8080  
 - Enable DAG: `trade_simulation`  
 
 ---
 
-### 6️⃣ Run the Pipeline
+### 6 Run the Pipeline
 
 - Open Airflow UI → http://localhost:8080  
 - Enable DAG: `trade_validation_pipeline`  
 
 ---
 
-## 📊 Business Rules
+## 7 Business Rules
 
 | Rule | Action |
 |------|--------|
@@ -134,7 +134,7 @@ docker compose exec airflow-webserver python scripts/init_db.py
 
 ---
 
-## 🗄️ Data Storage
+## 8 Data Storage
 
 **Database:** DuckDB (`db/trades.db`)
 
@@ -146,17 +146,19 @@ docker compose exec airflow-webserver python scripts/init_db.py
 
 ---
 
-## 🔔 Monitoring & Alerts
+## 9 Monitoring & Alerts
 
 - Airflow task retries & logs  
 - Email alerts on task failure  
 
----
+## 10 Power BI Report
 
-## 🔐 Security & Governance
+please refer report in docs\dashboard.pdf
+*(See `docs/dashboard.pdf` for the full diagram.)*
 
-- Role-based access to DB  
-- Encrypted Kafka traffic (in prod)  
+## 11 Security & Governance
+
+
 - Audit logging enabled  
 
 ---
