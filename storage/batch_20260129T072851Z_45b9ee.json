@@ -1,0 +1,102 @@
+[
+  {
+    "trade_id": "T76421",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-24",
+    "price": 96.29,
+    "quantity": 4663,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T57219",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-01-27",
+    "price": 103.59,
+    "quantity": 2817,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T66645",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-06",
+    "price": 96.74,
+    "quantity": 364,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T41402",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-07",
+    "price": 103.36,
+    "quantity": 2756,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T60219",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-14",
+    "price": 99.08,
+    "quantity": 726,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T42001",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-09",
+    "price": 96.78,
+    "quantity": 4917,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T84291",
+    "instrument": "EQUITY",
+    "version": 1,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-01",
+    "price": 100.89,
+    "quantity": 3290,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T47501",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-01",
+    "price": 100.24,
+    "quantity": 1329,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T80553",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-02-06",
+    "price": 102.68,
+    "quantity": 378,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T75127",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-29",
+    "maturity_date": "2026-01-30",
+    "price": 100.08,
+    "quantity": 579,
+    "counterparty": "GS"
+  }
+]
