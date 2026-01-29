@@ -57,6 +57,7 @@ services:
       - ./plugins:/opt/airflow/plugins
       - ./duckdb:/opt/airflow/duckdb
       - ./storage:/opt/airflow/raw/data
+      - ./scripts:/opt/airflow/config
     ports:
       - "8080:8080"
     command: webserver
@@ -78,6 +79,7 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
       - ./storage:/opt/airflow/raw/data
+      - ./scripts:/opt/airflow/config
     command: scheduler
 
   airflow-worker:
@@ -98,6 +100,7 @@ services:
       - ./plugins:/opt/airflow/plugins
       - ./duckdb:/opt/airflow/duckdb
       - ./storage:/opt/airflow/raw/data
+      - ./scripts:/opt/airflow/config
     command: celery worker
 
 volumes:
