@@ -109,4 +109,4 @@ with DAG(
         on_failure_callback=log_failure_email
     )
 
-    wait_for_topic >> run_kafka_consumer >> merge_staging_to_final 
+    wait_for_topic >> run_kafka_consumer>> process_trade_file >> merge_staging_to_final 
