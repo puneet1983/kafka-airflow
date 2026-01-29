@@ -1,12 +1,12 @@
 import duckdb
-from config import config
+import config as cfg
 import json
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def get_connection(db_path=config.DB_CONNECTION_STRING) -> duckdb.DuckDBPyConnection:
+def get_connection(db_path=cfg.DB_CONNECTION_STRING) -> duckdb.DuckDBPyConnection:
     return duckdb.connect(db_path)
 
 
