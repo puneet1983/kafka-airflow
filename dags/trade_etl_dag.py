@@ -13,22 +13,23 @@ sys.path.append("/opt/airflow/config")
 import kafka_consumer_batch
 import process_batch_file
 import load_delta
-import config  # <- our new config module
+import config as cfg  # <- our new config module
+import os
 
 # ---------------- Default Args ----------------
 default_args = {
     "owner": "puneet",
     "depends_on_past": False,
-    "retries": config.DEFAULT_RETRIES,
-    "retry_delay": timedelta(minutes=config.RETRY_DELAY_MINUTES),
-    "email_on_failure": config.EMAIL_ON_FAILURE,
-    "email_on_retry": config.EMAIL_ON_RETRY,
-    "email_on_success": config.EMAIL_ON_SUCCESS,
-    "email": config.EMAIL_LIST
+    "retries": cfg.DEFAULT_RETRIES,
+    "retry_delay": timedelta(minutes=cfg.RETRY_DELAY_MINUTES),
+    "email_on_failure": cfg.EMAIL_ON_FAILURE,
+    "email_on_retry": cfg.EMAIL_ON_RETRY,
+    "email_on_success": cfg.EMAIL_ON_SUCCESS,
+    "email": cfg.EMAIL_LIST
 }
 
 # ---------------- Email Functions ----------------
-def send_task_email(subject, content, to=config.EMAIL_LIST[0]):
+def send_task_email(subject, content, to=cfg.EMAIL_LIST[0]):
     print(f"Attempting to send email to: {to}")
     try:
         send_email(to=to, subject=subject, html_content=content)
@@ -60,17 +61,17 @@ with DAG(
     wait_for_topic = PythonOperator(
         task_id="wait_for_topic",
         python_callable=kafka_consumer_batch.wait_for_topic,
-        op_args=[config.KAFKA_TOPIC, config.KAFKA_BROKER],
-        retries=config.DEFAULT_RETRIES,
-        retry_delay=timedelta(seconds=config.RETRY_DELAY_SECONDS)
+        op_args=[cfg.KAFKA_TOPIC, cfg.KAFKA_BROKER],
+        retries=cfg.DEFAULT_RETRIES,
+        retry_delay=timedelta(seconds=cfg.RETRY_DELAY_SECONDS)
     )
 
     run_kafka_consumer = PythonOperator(
         task_id="run_kafka_consumer_batch",
         python_callable=kafka_consumer_batch.consume_kafka_to_file,
-        op_args=[config.KAFKA_TOPIC, config.KAFKA_BROKER, config.KAFKA_BATCH_SIZE, config.RAW_DATA_PATH],
-        retries=config.DEFAULT_RETRIES,
-        retry_delay=timedelta(seconds=config.RETRY_DELAY_SECONDS),
+        op_args=[cfg.KAFKA_TOPIC, cfg.KAFKA_BROKER, cfg.KAFKA_BATCH_SIZE, cfg.RAW_DATA_PATH],
+        retries=cfg.DEFAULT_RETRIES,
+        retry_delay=timedelta(seconds=cfg.RETRY_DELAY_SECONDS),
         on_success_callback=log_success_email,
         on_failure_callback=log_failure_email
     )
@@ -83,8 +84,8 @@ with DAG(
         task_id="process_staging_file",
         python_callable=process_file_callable,
         provide_context=True,
-        retries=config.DEFAULT_RETRIES,
-        retry_delay=timedelta(seconds=config.RETRY_DELAY_SECONDS),
+        retries=cfg.DEFAULT_RETRIES,
+        retry_delay=timedelta(seconds=cfg.RETRY_DELAY_SECONDS),
         on_success_callback=log_success_email,
         on_failure_callback=log_failure_email
     )
@@ -93,8 +94,8 @@ with DAG(
         task_id="insert_to_final_table",
         python_callable=load_delta.merge_staging_to_final,
         op_args=["{{ ti.xcom_pull(task_ids='run_kafka_consumer_batch')[1] }}"],
-        retries=config.DEFAULT_RETRIES,
-        retry_delay=timedelta(seconds=config.RETRY_DELAY_SECONDS),
+        retries=cfg.DEFAULT_RETRIES,
+        retry_delay=timedelta(seconds=cfg.RETRY_DELAY_SECONDS),
         on_success_callback=log_success_email,
         on_failure_callback=log_failure_email
     )
