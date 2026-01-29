@@ -64,6 +64,19 @@ etl-trade-pipeline/
 ```
 
 ---
+## Service selection
+
+| # | GCP Cloud Service       | Service Used for Implementation                                                                 |
+|---|------------------------|------------------------------------------------------------------------------------------------|
+| 1 | BigQuery               | DuckDB (file-based)                                                                            |
+| 2 | Storage (Bucket)       | Local file system mounted for data storage                                                    |
+| 3 | Pub/Sub                | Kafka                                                                                          |
+| 4 | Composer               | Airflow                                                                                        |
+| 5 | Logger                 | Logger on local disk mapped with Composer                                                     |
+| 6 | Email Alert            | Used for success and failure notifications                                                   |
+| 7 | Spark / Databricks     | Native Python used to process data; suitable for small datasets. For large or complex processing, Spark is recommended |
+
+
 
 ##  Prerequisites
 
