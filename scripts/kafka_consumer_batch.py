@@ -6,6 +6,7 @@ from datetime import datetime
 from kafka import KafkaConsumer
 from kafka.admin import KafkaAdminClient
 import os
+from config import config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
