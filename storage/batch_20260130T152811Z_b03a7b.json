@@ -1,0 +1,102 @@
+[
+  {
+    "trade_id": "T70594",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-28",
+    "price": 101.74,
+    "quantity": 2719,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T10718",
+    "instrument": "BOND",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-03-01",
+    "price": 98.48,
+    "quantity": 1068,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T29962",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-15",
+    "price": 104.68,
+    "quantity": 4063,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T85716",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-06",
+    "price": 100.04,
+    "quantity": 3578,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T64592",
+    "instrument": "FX",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-27",
+    "price": 95.22,
+    "quantity": 143,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T25179",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-27",
+    "price": 97.48,
+    "quantity": 4906,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T47831",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-15",
+    "price": 95.3,
+    "quantity": 4641,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T31958",
+    "instrument": "FX",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-29",
+    "price": 102.42,
+    "quantity": 3123,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T42997",
+    "instrument": "BOND",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-26",
+    "price": 99.84,
+    "quantity": 969,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T89003",
+    "instrument": "FX",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-23",
+    "price": 102.31,
+    "quantity": 1475,
+    "counterparty": "JPMC"
+  }
+]

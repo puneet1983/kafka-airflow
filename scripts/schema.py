@@ -18,31 +18,39 @@ def create_all_tables(con: duckdb.DuckDBPyConnection):
     # Final tables
     con.execute("""
     CREATE TABLE IF NOT EXISTS valid_trades (
-        trade_id TEXT,
-        instrument TEXT,
-        version INTEGER,
-        trade_date DATE,
-        maturity_date DATE,
-        price DOUBLE,
-        quantity INTEGER,
-        counterparty TEXT,
-        status TEXT,
-        processed_at TIMESTAMP
+    trade_id TEXT,
+    instrument TEXT,
+    version INTEGER,
+    trade_date DATE,
+    maturity_date DATE,
+    price DOUBLE,
+    quantity INTEGER,
+    counterparty TEXT,
+    status TEXT,
+
+    is_current BOOLEAN,
+    effective_from TIMESTAMP,
+    effective_to TIMESTAMP,
+    record_version INTEGER
     )
     """)
 
     con.execute("""
     CREATE TABLE IF NOT EXISTS rejected_trades (
-        trade_id TEXT,
-        instrument TEXT,
-        version INTEGER,
-        trade_date DATE,
-        maturity_date DATE,
-        price DOUBLE,
-        quantity INTEGER,
-        counterparty TEXT,
-        reason TEXT,
-        processed_at TIMESTAMP
+    trade_id TEXT,
+    instrument TEXT,
+    version INTEGER,
+    trade_date DATE,
+    maturity_date DATE,
+    price DOUBLE,
+    quantity INTEGER,
+    counterparty TEXT,
+    reason TEXT,
+
+    is_current BOOLEAN,
+    effective_from TIMESTAMP,
+    effective_to TIMESTAMP,
+    record_version INTEGER
     )
     """)
 

@@ -1,0 +1,102 @@
+[
+  {
+    "trade_id": "T86878",
+    "instrument": "FX",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-13",
+    "price": 96.06,
+    "quantity": 1176,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T34237",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-17",
+    "price": 103.24,
+    "quantity": 175,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T66662",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-15",
+    "price": 103.04,
+    "quantity": 4311,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T68900",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-04",
+    "price": 102.63,
+    "quantity": 4397,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T91905",
+    "instrument": "FX",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-03-01",
+    "price": 102.09,
+    "quantity": 363,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T59267",
+    "instrument": "BOND",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-09",
+    "price": 103.86,
+    "quantity": 3547,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T12296",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-20",
+    "price": 104.49,
+    "quantity": 4977,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T65715",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-24",
+    "price": 104.48,
+    "quantity": 661,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T80945",
+    "instrument": "BOND",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-19",
+    "price": 98.55,
+    "quantity": 387,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T27987",
+    "instrument": "BOND",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-14",
+    "price": 100.69,
+    "quantity": 1660,
+    "counterparty": "JPMC"
+  }
+]

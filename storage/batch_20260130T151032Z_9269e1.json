@@ -1,0 +1,102 @@
+[
+  {
+    "trade_id": "T69583",
+    "instrument": "EQUITY",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-30",
+    "price": 95.31,
+    "quantity": 2135,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T65647",
+    "instrument": "EQUITY",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-25",
+    "price": 103.0,
+    "quantity": 2475,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T11231",
+    "instrument": "FX",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-02",
+    "price": 104.53,
+    "quantity": 2268,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T51080",
+    "instrument": "EQUITY",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-24",
+    "price": 95.63,
+    "quantity": 1426,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T38069",
+    "instrument": "FX",
+    "version": 1,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-13",
+    "price": 96.75,
+    "quantity": 955,
+    "counterparty": "JPMC"
+  },
+  {
+    "trade_id": "T28571",
+    "instrument": "BOND",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-12",
+    "price": 96.52,
+    "quantity": 1073,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T28376",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-27",
+    "price": 104.44,
+    "quantity": 4937,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T25199",
+    "instrument": "EQUITY",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-14",
+    "price": 104.2,
+    "quantity": 3910,
+    "counterparty": "CITI"
+  },
+  {
+    "trade_id": "T93653",
+    "instrument": "FX",
+    "version": 2,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-02-14",
+    "price": 102.43,
+    "quantity": 562,
+    "counterparty": "GS"
+  },
+  {
+    "trade_id": "T25736",
+    "instrument": "BOND",
+    "version": 3,
+    "trade_date": "2026-01-30",
+    "maturity_date": "2026-01-27",
+    "price": 104.62,
+    "quantity": 4617,
+    "counterparty": "CITI"
+  }
+]
