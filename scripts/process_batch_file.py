@@ -40,28 +40,35 @@ def validate_trade_only(con, trade, batch_id):
         WHERE trade_id = ?
         ORDER BY version DESC LIMIT 1
     """, [trade["trade_id"]]).fetchone()
-
+    input_trade_id=trade["trade_id"]
     if existing and trade["version"] < existing[0]:
         insert_staging_rejected(con, trade, batch_id, "Lower version than existing")
+        logger.info(f"TradeId : {input_trade_id} rejected due to version check ")
         return
 
     # Maturity check
     maturity_date = datetime.strptime(trade["maturity_date"], "%Y-%m-%d").date()
     if maturity_date < date.today():
         insert_staging_rejected(con, trade, batch_id, "Maturity date earlier than today")
+        logger.info(f"TradeId : {input_trade_id} rejected due to Maturity date check ")
+        
         return
 
     insert_staging_valid(con, trade, batch_id, "VALID")
-
+    logger.info(f"TradeId : {input_trade_id}  valid trade id processed. ")
+       
 
 def process_staging_file(file_path: str, batch_id: str):
     logger.info("Processing file to staging | batch_id=%s | file=%s", batch_id, file_path)
-
+    if not file_path:
+        print("No file to process. Skipping.")
+        return
     con = get_connection()
     create_all_tables(con)
 
     with open(file_path, "r") as f:
         trades = json.load(f)
+        logger.info("loaded trade file")
 
     for trade in trades:
         try:
